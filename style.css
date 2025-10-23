@@ -1,0 +1,166 @@
+/* style.css */
+
+/* 1. 全域樣式與字體設定 */
+:root {
+    --primary-color: #333;
+    --secondary-color: #6c757d; /* 職稱顏色偏灰 */
+    --background-color: #f5f5f5; /* 頁面背景淺灰色 */
+    --card-background: #ffffff; /* 卡片白底 */
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --shadow-color: rgba(0, 0, 0, 0.1); /* 柔和陰影 */
+    --border-radius: 16px; /* 圓角 */
+}
+
+/* 6. 使用無襯線字體 */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--background-color); /* 1. 整體頁面背景為淺灰色 */
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. 使用白底、圓角 16px、柔和陰影 (投影片/卡片區段) */
+.card-container {
+    width: 100%;
+    max-width: 400px; /* 限制卡片最大寬度 */
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 這裡將 <main> 和 <footer> 內容包在一個 class 為 card-container 的父元素中，以符合樣式要求 */
+/* 由於你只提供 HTML 結構，我將樣式應用於其內部元素，模擬卡片效果 */
+
+/* 模擬投影片效果，將樣式應用於 main 和 footer */
+main, footer, header {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 30px;
+    margin-bottom: 20px; /* 區段間隔 */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 讓所有內容居中顯示 */
+header, main, footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header 區塊樣式 (姓名與職稱) */
+header {
+    text-align: center; /* 3. 姓名與職稱置中顯示 */
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+header h2 {
+    color: var(--secondary-color); /* 3. 職稱字體顏色偏灰 */
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+/* Main 區塊樣式 (頭像與自我介紹) */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 4. 頭像置中，呈現圓形效果 */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圓形效果 */
+    object-fit: cover;
+    display: block; /* 確保置中 */
+    margin: 0 auto; /* 置中 */
+    border: 4px solid var(--background-color); /* 輕微邊框增加層次 */
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.bio {
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Footer 區塊樣式 (聯絡資訊與社群連結) */
+footer h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+address ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left; /* 讓聯絡資訊靠左對齊 */
+    display: inline-block; /* 確保ul不會佔滿全寬，便於置中 */
+}
+
+address li {
+    margin-bottom: 10px;
+}
+
+address a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+address a:hover {
+    color: var(--link-hover-color);
+}
+
+/* 5. 社群連結在底部水平排列，滑過時變色 */
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    gap: 25px; /* 連結間距 */
+    margin-top: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+    font-size: 1.1em;
+}
+
+.social-links a:hover {
+    color: var(--link-hover-color); /* 滑過時變色 */
+    transform: translateY(-2px); /* 輕微上移效果 */
+}
+
+/* 7. 保持良好的間距與版面平衡 (已透過 padding, margin, gap 實現) */
+/* 調整整體佈局，讓 body 內的 header, main, footer 垂直堆疊並置中 */
+body {
+    flex-direction: column;
+}
+
+/* 為了更好地模擬投影片效果，移除上方對 main, footer, header 的重複卡片樣式設定，
+   改為將它們置於 body 內垂直堆疊，每個區段獨立呈現卡片效果。 */
+/* 如果要將整個名片視為一張卡片，則只需一個外部 div 應用卡片樣式。
+   但根據「一個區段一頁」的要求，我讓每個區塊獨立呈現。 */
