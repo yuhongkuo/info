@@ -1,1 +1,1 @@
-This is my resume written in html/css.
+This is my personal information written in html/css.
